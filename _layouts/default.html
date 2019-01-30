@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    {% feed_meta %}
+    {% seo %}
+    {% if jekyll.environment == "production" %}
+      <!-- Use: JEKYLL_ENV=production bundle exec jekyll build to make this available -->
+      <script src="my-analytics-script.js"></script>
+    {% endif %}
   </head>
   <body>
     {% include navigation.html %}
